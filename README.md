@@ -22,7 +22,7 @@ The recommended way to customize your configuration is using the files below, in
  * `config.yml`
  * `sentry.conf.py`
  * `.env` w/ environment variables
-
+ * add `sentry-telegram` to `requirements.txt` for use **Telegram Notification**.
 If you have any issues or questions, our [Community Forum](https://forum.sentry.io/c/on-premise) is at your service!
 
 ## Securing Sentry with SSL/TLS
