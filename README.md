@@ -55,7 +55,8 @@ docker-compose up -d # Recreate the services
 
 
 ## Command
-1. Create user:
+- Create user:
 ```
-sentry createuser --email khoapham@gmail.com --password password@123 --superuser
+sentry createuser --email admin@whoiskp.com --password password@123 --superuser
 ```
+- 
