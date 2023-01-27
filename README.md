@@ -52,3 +52,10 @@ docker-compose up -d # Recreate the services
 
 [build-status-image]: https://api.travis-ci.com/getsentry/onpremise.svg?branch=master
 [build-status-url]: https://travis-ci.com/getsentry/onpremise
+
+
+## Command
+1. Create user:
+```
+sentry createuser --email khoapham@gmail.com --password password@123 --superuser
+```

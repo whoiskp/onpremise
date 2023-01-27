@@ -66,3 +66,4 @@ mail.list-namespace: 'whoiskp.com'
 slack.client-id: 'client-id.get-from-app-slack-settings'
 slack.client-secret: client-secret_get-from-app-slack-settings
 slack.verification-token: verification-token_get-from-app-slack-settings
+

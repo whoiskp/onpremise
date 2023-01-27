@@ -26,7 +26,9 @@ x-defaults: &defaults
     SENTRY_POSTGRES_HOST: postgres
     SENTRY_EMAIL_HOST: smtp
   volumes:
-    - sentry-data:/var/lib/sentry/files
+    - ./data-sentry:/var/lib/sentry/files
+    # mount interations to `/mnt` is trick for update source code & apply change
+    - ./integrations:/mnt
 
 
 services:
@@ -46,12 +48,14 @@ services:
     restart: unless-stopped
     image: postgres:9.5
     volumes:
-      - sentry-postgres:/var/lib/postgresql/data
+      - ./data-postgres:/var/lib/postgresql/data
+    environment:
+      POSTGRES_HOST_AUTH_METHOD: trust 
 
   web:
     <<: *defaults
     ports:
-      - '9000:9000'
+      - '8990:9000'
 
   cron:
     <<: *defaults
@@ -62,8 +66,9 @@ services:
     command: run worker
 
 
-volumes:
-    sentry-data:
-      external: true
-    sentry-postgres:
-      external: true
+## We not use default sentry-data, sentry-postgres - It's maybe conflict with complex sentry version!
+# volumes:
+#     data-sentry:
+#       external: true
+#     data-postgres:
+#       external: true
